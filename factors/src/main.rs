@@ -25,4 +25,10 @@ fn main() {
         .expect("Code you have proven should successfully verify; did you specify the correct image ID?");
 
     // TODO: Implement code for transmitting or serializing the receipt for other parties to verify here
+    
+    // Extract journal of receipt (i.e. output c, where c = a * b)
+    let c: u64 = from_slice(&receipt.journal).unwrap();
+
+    // Print an assertion
+    println!("Hello, world! I know the factors of {}, and I can prove it!", c);
 }
